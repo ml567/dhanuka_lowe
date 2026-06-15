@@ -1127,172 +1127,6 @@ section {
     margin-bottom: 1.5rem;
 }
 
-/* ===================== MEDIA PAGE ===================== */
-.media-section {
-    padding: 5rem 0;
-}
-
-.media-section:first-of-type {
-    padding-top: 6rem;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-}
-
-.video-card {
-    background: var(--ink-raised);
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
-
-.video-card.featured {
-    grid-column: 1 / -1;
-}
-
-.video-placeholder {
-    aspect-ratio: 16/9;
-    background: linear-gradient(135deg, var(--ink-raised) 0%, var(--ink-mid) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.video-card.featured .video-placeholder {
-    aspect-ratio: 21/9;
-}
-
-.video-bg-img {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.35;
-    transition: transform 0.8s var(--ease), opacity 0.4s;
-}
-
-.video-card:hover .video-bg-img {
-    transform: scale(1.05);
-    opacity: 0.45;
-}
-
-.play-button {
-    width: 64px;
-    height: 64px;
-    border: 1.5px solid rgba(201, 165, 90, 0.5);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    transition: var(--transition);
-    position: relative;
-    z-index: 1;
-    margin-bottom: 1.5rem;
-}
-
-.video-card:hover .play-button {
-    background: rgba(201, 165, 90, 0.15);
-    border-color: var(--gold);
-    transform: scale(1.1);
-}
-
-.play-button svg {
-    width: 22px;
-    height: 22px;
-    margin-left: 3px;
-}
-
-.video-info {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.video-info h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    color: var(--ivory);
-    font-weight: 400;
-    margin-bottom: 0.3rem;
-}
-
-.video-info p {
-    font-size: 0.78rem;
-    color: var(--muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Photo Gallery */
-.photo-gallery {
-    columns: 3;
-    column-gap: 2px;
-}
-
-.photo-card {
-    break-inside: avoid;
-    margin-bottom: 2px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.photo-placeholder {
-    width: 100%;
-    aspect-ratio: 3/4;
-    position: relative;
-    overflow: hidden;
-    background: var(--ink-raised);
-}
-
-.photo-card.wide .photo-placeholder {
-    aspect-ratio: 4/3;
-}
-.photo-card.tall .photo-placeholder {
-    aspect-ratio: 2/3;
-}
-
-.photo-img {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.8s var(--ease);
-}
-
-.photo-card:hover .photo-img {
-    transform: scale(1.06);
-}
-
-.photo-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(13, 13, 13, 0.85) 0%, transparent 60%);
-    display: flex;
-    align-items: flex-end;
-    padding: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.4s;
-}
-
-.photo-card:hover .photo-overlay {
-    opacity: 1;
-}
-
-.photo-overlay p {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--ivory);
-    font-style: italic;
-}
 
 /* ===================== ENHANCED SOCIAL GRID ===================== */
 .social-section {
@@ -1302,7 +1136,7 @@ section {
 
 .social-grid-enhanced {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5px;
     background: var(--border-soft);
     max-width: 1060px;
@@ -1402,345 +1236,6 @@ section {
     letter-spacing: 1px;
 }
 
-/* ===================== PRESS SECTION ===================== */
-.press-section {
-    background: var(--ink);
-}
-
-.press-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5px;
-    background: var(--border-soft);
-}
-
-.press-item {
-    background: var(--ink);
-    padding: 2.5rem 2rem;
-    transition: var(--transition);
-    border: none;
-}
-
-.press-item:hover {
-    background: var(--ink-raised);
-}
-
-.press-logo {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--gold);
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-}
-
-.press-title {
-    font-size: 0.9rem;
-    color: var(--ivory);
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-.press-date {
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* ===================== TESTIMONIALS PAGE ===================== */
-.testimonials-section {
-    background: var(--ink);
-}
-
-.testimonials-masonry {
-    columns: 2;
-    column-gap: 2rem;
-}
-
-.testimonial-card {
-    break-inside: avoid;
-    background: var(--ink-raised);
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-soft);
-    position: relative;
-    transition: var(--transition);
-}
-
-.testimonial-card:hover {
-    border-color: var(--border);
-}
-
-.testimonial-card.featured {
-    background: var(--ink-mid);
-    border-color: var(--border);
-}
-
-.quote-mark {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    color: var(--gold);
-    line-height: 0.8;
-    margin-bottom: 1.2rem;
-    opacity: 0.4;
-    display: block;
-}
-
-.testimonial-text {
-    font-size: 1rem;
-    color: var(--muted-light);
-    line-height: 1.85;
-    margin-bottom: 2rem;
-    font-style: italic;
-}
-
-.testimonial-author {
-    padding-top: 1.2rem;
-    border-top: 1px solid var(--border-soft);
-}
-
-.author-name {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--ivory);
-    letter-spacing: 0.5px;
-    margin-bottom: 0.2rem;
-}
-
-.author-title {
-    font-size: 0.78rem;
-    color: var(--gold-dim);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Credentials */
-.credentials-section {
-    background: var(--ink-soft);
-}
-
-.credentials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--border-soft);
-}
-
-.credential-card {
-    background: var(--ink-soft);
-    padding: 3rem 2.5rem;
-    transition: var(--transition);
-}
-
-.credential-card:hover {
-    background: var(--ink-raised);
-}
-
-.credential-icon {
-    width: 48px;
-    height: 48px;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-}
-
-.credential-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.credential-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--ivory);
-    font-weight: 400;
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
-}
-
-.credential-detail {
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: block;
-    font-weight: 500;
-}
-
-.credential-card p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.75;
-}
-
-/* Recognition */
-.recognition-section {
-    background: var(--ink);
-}
-
-.recognition-list {
-    max-width: 880px;
-    margin: 0 auto;
-}
-
-.recognition-item {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 3rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--border-soft);
-    align-items: start;
-}
-
-.recognition-item:last-child {
-    border-bottom: none;
-}
-
-.recognition-year {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--gold);
-    font-style: italic;
-    padding-top: 0.3rem;
-}
-
-.recognition-content h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--ivory);
-    font-weight: 400;
-    margin-bottom: 0.6rem;
-}
-
-.recognition-content p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.8;
-}
-
-/* CTA Section */
-.cta-section {
-    background: var(--ink-soft);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    text-align: center;
-    padding: 6rem 0;
-}
-
-.cta-section h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--ivory);
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-.cta-section p {
-    font-size: 1rem;
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* ===================== FLOATING WHATSAPP ===================== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 2.2rem;
-    right: 2.2rem;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    filter: drop-shadow(0 8px 24px rgba(37, 211, 102, 0.35));
-    transition: all 0.4s var(--ease);
-    text-decoration: none;
-}
-
-.whatsapp-float:hover {
-    filter: drop-shadow(0 12px 32px rgba(37, 211, 102, 0.55));
-    transform: translateY(-3px);
-}
-
-.whatsapp-btn {
-    width: 58px;
-    height: 58px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.4s var(--ease);
-    flex-shrink: 0;
-}
-
-.whatsapp-btn svg {
-    width: 28px;
-    height: 28px;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-.whatsapp-btn::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    border: 2px solid rgba(37, 211, 102, 0.4);
-    animation: waPulse 2.5s ease-in-out infinite;
-}
-
-.whatsapp-btn::after {
-    content: '';
-    position: absolute;
-    inset: -10px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(37, 211, 102, 0.2);
-    animation: waPulse 2.5s ease-in-out 0.4s infinite;
-}
-
-@keyframes waPulse {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.18);
-        opacity: 0;
-    }
-}
-
-.whatsapp-label {
-    background: rgba(13, 13, 13, 0.92);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(37, 211, 102, 0.3);
-    color: var(--ivory);
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border-radius: 4px 0 0 4px;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateX(10px);
-    pointer-events: none;
-    transition: all 0.3s var(--ease);
-    margin-right: -2px;
-}
-
-.whatsapp-float:hover .whatsapp-label {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 /* Footer social TikTok & WhatsApp colors */
 .footer-social a.tiktok {
@@ -1793,6 +1288,225 @@ section {
     transition-delay: 0.3s;
 }
 
+/* ===================== PERFORMANCES (SOLO / DUO / BAND) ===================== */
+.performances-section {
+    background: var(--ink);
+    padding: 7rem 0;
+}
+
+.performances-section--alt {
+    background: var(--ink-soft);
+}
+
+/* Photo grid — 3 columns */
+.perf-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.perf-photo-item {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    position: relative;
+}
+
+.perf-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease);
+    filter: brightness(0.88) saturate(0.85);
+}
+
+.perf-photo-item:hover img {
+    transform: scale(1.04);
+}
+
+/* Video grid — 3 columns */
+.perf-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.perf-video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--ink-raised);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.perf-video-card:hover {
+    border-color: var(--border);
+    transform: translateY(-4px);
+}
+
+.perf-video-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--ink-mid);
+    overflow: hidden;
+}
+
+.perf-video-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.perf-video-info {
+    padding: 1.2rem 1.4rem 1.4rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.perf-video-label {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.perf-video-caption {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* ===================== BAND ARTISTS ===================== */
+.band-artists-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+.band-artist-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--ink-raised);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.band-artist-card:hover {
+    border-color: var(--border);
+    transform: translateY(-4px);
+}
+
+.band-artist-img {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.band-artist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.8s var(--ease);
+    filter: brightness(0.85) saturate(0.8);
+}
+
+.band-artist-card:hover .band-artist-img img {
+    transform: scale(1.05);
+}
+
+.band-artist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(to bottom, rgba(13,13,13,0.8) 0%, transparent 100%);
+}
+
+.band-artist-intro-label {
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.band-artist-info {
+    padding: 1.2rem 1.2rem 1.4rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.band-artist-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.band-artist-role {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    font-weight: 500;
+}
+
+/* ===================== BAND GROUP IMAGE ===================== */
+.band-group-img-wrap {
+    position: relative;
+    /* aspect-ratio: 16 / 7; */
+    overflow: hidden;
+}
+
+.band-group-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) saturate(0.85);
+    transition: transform 0.8s var(--ease);
+}
+
+.band-group-img:hover .band-group-img-wrap img {
+    transform: scale(1.02);
+}
+
+.band-group-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 2.5rem;
+    background: linear-gradient(to top, rgba(13,13,13,0.85) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.band-group-caption-label {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.band-group-caption-text {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.2;
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
     .footer-main {
@@ -1825,6 +1539,12 @@ section {
     .page-header-glow {
         background: radial-gradient(ellipse at 55% 60%, rgba(201, 165, 90, 0.12) 0%, transparent 55%);
     }
+    .band-artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .perf-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1856,6 +1576,18 @@ section {
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 4rem;
+    }
+    .perf-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .perf-video-grid {
+        grid-template-columns: 1fr;
+    }
+    .band-artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .band-group-img-wrap {
+        aspect-ratio: 4 / 3;
     }
     .video-grid {
         grid-template-columns: 1fr;
@@ -1911,7 +1643,15 @@ section {
 }
 
 @media (max-width: 540px) {
-    .hero-title {
+    .perf-photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .band-artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .
+     {
         font-size: 2.8rem;
     }
     .social-grid-enhanced {
@@ -1947,248 +1687,6 @@ section {
     }
 }
 
-/* ========================================
-   UNIQUE GALLERY & VIDEO PREVIEW STYLES
-   ======================================== */
-
-/* --- Video Preview Grid Styles --- */
-.video-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 4rem 0 5rem;
-}
-
-.video-card {
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  cursor: pointer;
-  position: relative;
-}
-
-.video-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.2);
-}
-
-.video-thumb {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  background: #0a0a0a;
-}
-
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.video-card:hover .video-thumb img {
-  transform: scale(1.05);
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.video-card:hover .video-overlay {
-  opacity: 1;
-}
-
-.play-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.play-icon svg {
-  width: 28px;
-  height: 28px;
-  margin-left: 4px;
-  color: #1e1e2a;
-}
-
-.play-icon:hover {
-  transform: scale(1.1);
-  background: #ffffff;
-}
-
-.video-info {
-  padding: 1.2rem 1.5rem 1.5rem;
-  background: white;
-}
-
-.video-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 0.4rem;
-  color: #1e1e2a;
-}
-
-.video-info p {
-  font-size: 0.85rem;
-  color: #666;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0.3px;
-}
-
-/* Hero video card larger */
-.video-hero .video-thumb {
-  aspect-ratio: 16 / 9;
-}
-
-/* --- UNIQUE ASYMMETRIC GALLERY GRID --- */
-.gallery-preview-section {
-  margin: 5rem 0 4rem;
-}
-
-.gallery-preview-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 0.75rem;
-}
-
-.gallery-preview-header h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: -0.2px;
-  color: #2c2c3a;
-}
-
-.view-all-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 0.85rem;
-  color: #b87333;
-  text-decoration: none;
-  transition: gap 0.3s ease;
-}
-
-.view-all-link:hover {
-  gap: 12px;
-  color: #9a5a2a;
-}
-
-.view-all-link svg {
-  transition: transform 0.2s;
-}
-
-/* The unique asymmetric grid */
-.gallery-grid-unique {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
-  gap: 1.2rem;
-  margin: 2rem 0 3rem;
-}
-
-/* Individual gallery items */
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  background: #f8f9fc;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  display: block;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.02);
-}
-
-.gallery-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
-  padding: 1.2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-label {
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  background: rgba(184, 115, 51, 0.85);
-  padding: 0.25rem 0.8rem;
-  border-radius: 40px;
-  backdrop-filter: blur(4px);
-}
-
-/* Unique sizing for asymmetry */
-.gallery-tall {
-  grid-row: span 2;
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-wide {
-  grid-column: span 2;
-  aspect-ratio: 16 / 9;
-}
-
-.gallery-square {
-  aspect-ratio: 1 / 1;
-}
-
-/* Default item aspect ratio */
-.gallery-item:not(.gallery-tall):not(.gallery-wide):not(.gallery-square) {
-  aspect-ratio: 4 / 3;
-}
-
-/* CTA styling */
-.cta-center {
-  text-align: center;
-  margin: 2.5rem 0 1rem;
-}
 
 /* --- Floating Instagram Icon (Replaces WhatsApp) --- */
 .instagram-float {
