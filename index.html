@@ -9,6 +9,120 @@
     <link rel="stylesheet" href="styles.css">
 
         <style>
+            /* ===================== HAMBURGER ===================== */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 110;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--ivory);
+    transition: var(--transition);
+    transform-origin: center;
+}
+
+/* X animation when open */
+.nav-hamburger.is-active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.is-active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.is-active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ===================== RESPONSIVE — NAV + HERO ===================== */
+@media (max-width: 768px) {
+
+    /* NAV */
+    .nav-container {
+        padding: 1.1rem 1.5rem;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        /* Hidden drawer */
+        position: fixed;
+        inset: 0 0 0 30%;          /* slides in from right */
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2.2rem;
+        padding: 5rem 2.5rem 3rem;
+        background: rgba(13, 13, 13, 0.97);
+        backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border);
+        transform: translateX(100%);
+        transition: transform 0.4s var(--ease);
+        z-index: 105;
+    }
+
+    .nav-links.nav-open {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        letter-spacing: 2.5px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 100svh;        /* use svh so address bar doesn't clip */
+        align-items: flex-end;     /* anchor content lower on portrait screens */
+        padding-bottom: 5rem;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+        max-width: 100%;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 11vw, 4.5rem);   /* tighter clamp for phones */
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .hero-actions .btn {
+        text-align: center;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 430px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.4rem, 12vw, 3rem);
+    }
+}
 
         /* Contact layout override for portrait col */
         @media (max-width: 900px) {
@@ -33,19 +147,21 @@
 
 <body>
 
-    <nav class="nav" id="nav">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Dhanuka Lowe</a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="#solo">Solo</a>
-                <a href="#duo">Duo</a>
-                <a href="#band">Band</a>
-                <a href="#contact">Contact</a>
-            </div>
+<nav class="nav" id="nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Dhanuka Lowe</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="#solo">Solo</a>
+            <a href="#duo">Duo</a>
+            <a href="#band">Band</a>
+            <a href="#contact">Contact</a>
         </div>
-    </nav>
-
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
     <!-- HERO -->
     <header class="hero" id="hero">
         <div class="hero-bg" id="heroBg"></div>
@@ -754,6 +870,20 @@
         }, { threshold: 0.12 });
 
         reveals.forEach(el => observer.observe(el));
+        const hamburger = document.getElementById('navHamburger');
+const navLinks  = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('nav-open');
+    hamburger.classList.toggle('is-active', open);
+});
+// Close on link click
+navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        hamburger.classList.remove('is-active');
+    })
+);
     </script>
+    
 </body>
 </html>
