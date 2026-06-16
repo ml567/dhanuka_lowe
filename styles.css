@@ -1307,7 +1307,7 @@ section {
 
 .perf-photo-item {
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
     position: relative;
 }
 
